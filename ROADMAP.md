@@ -1,0 +1,1 @@
+- Add Konata Izumi logo to Discord developer page

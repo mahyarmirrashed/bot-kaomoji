@@ -1,0 +1,6 @@
+{
+  // fix tab size to match .prettierrc configuration
+  "editor.tabSize": 2,
+  // files should be created with LF line endings
+  "files.eol": "\n"
+}
