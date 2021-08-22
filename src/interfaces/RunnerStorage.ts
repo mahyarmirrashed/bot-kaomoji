@@ -1,5 +1,5 @@
-import { Client } from 'discord.js';
+import Bot from "../client/Client";
 
 export default interface Runner<T = Record<string, never>> {
-  (client: Client, args: T): Promise<void>;
+  (client: Bot, args: T): Promise<void>;
 }

@@ -51,6 +51,8 @@
     "react/jsx-filename-extension": 0,
     // line spacing rule
     "lines-between-class-members": "off",
-    "@typescript-eslint/lines-between-class-members": 0
+    "@typescript-eslint/lines-between-class-members": 0,
+    // invalid reporting on dependency cycle
+    "import/no-cycle": 0
   }
 }
