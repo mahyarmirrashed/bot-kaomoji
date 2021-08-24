@@ -9,17 +9,16 @@ import {
 import glob from 'glob';
 import { promisify } from 'util';
 import Event from '../interfaces/EventStorage';
-import Kaomoji from '../types/Kaomoji';
 
 const globPromise = promisify(glob);
 
 export default class Bot extends Client {
   // readonly members
   public readonly events: Collection<string, Event> = new Collection();
-  public readonly kaomojis: ReadonlyArray<Kaomoji>;
+  public readonly kaomojis: Collection<string, string>;
   public readonly logger: Consola = consola;
 
-  public constructor(kaomojis: ReadonlyArray<Kaomoji>) {
+  public constructor(kaomojis: Collection<string, string>) {
     super({
       // only need access to send and delete messages inside guild
       intents: [Intents.FLAGS.GUILD_MESSAGES],
@@ -62,7 +61,5 @@ export default class Bot extends Client {
         });
       })
       .catch((e: unknown) => this.logger.error(e));
-
-    this.kaomojis.forEach((kaomoji: Kaomoji) => this.logger.info(kaomoji.data));
   }
 }
