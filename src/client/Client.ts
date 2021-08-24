@@ -1,4 +1,11 @@
+import {
+  SlashCommandBuilder,
+  SlashCommandStringOption,
+} from '@discordjs/builders';
+import { REST } from '@discordjs/rest';
+import { cyan } from 'chalk';
 import consola, { Consola } from 'consola';
+import { Routes } from 'discord-api-types/v9';
 import {
   Client,
   Collection,
@@ -9,6 +16,7 @@ import {
 import glob from 'glob';
 import { promisify } from 'util';
 import Event from '../interfaces/EventStorage';
+import Kaomoji from '../types/Kaomoji';
 
 const globPromise = promisify(glob);
 
@@ -45,7 +53,7 @@ export default class Bot extends Client {
       .catch((e: unknown) => this.logger.error(e));
 
     // load Kaomojis
-    this.kaomojis = kaomojis || [];
+    this.kaomojis = kaomojis || new Collection<string, string>();
   }
 
   public start(): void {
@@ -54,12 +62,42 @@ export default class Bot extends Client {
       .then((events: string[]) => {
         events.map(async (eventPath: string) => {
           import(eventPath).then((event: Event) => {
-            this.logger.info(`Registering event "${event.name}"...`);
+            this.logger.info(`Registering event ${cyan(event.name)}...`);
             this.events.set(event.name, event);
             this.on(event.name, event.run.bind(null, this));
           });
         });
       })
+      .catch((e: unknown) => this.logger.error(e));
+
+    // register kaomoji slash commands
+    new REST({ version: '9' })
+      .setToken(process.env.DISCORD_TOKEN as string)
+      .put(
+        Routes.applicationGuildCommands(
+          process.env.CLIENT_ID as string,
+          process.env.GUILD_ID as string,
+        ),
+        {
+          body: Array.from(
+            this.kaomojis.entries(),
+            ([name, data]: [string, string]) =>
+              new SlashCommandBuilder()
+                .setName(name)
+                .setDescription(`Appends ${data} to your message.`)
+                .setDefaultPermission(true)
+                .addStringOption((option: SlashCommandStringOption) =>
+                  option.setName('message').setDescription('Your message'),
+                )
+                .toJSON(),
+          ),
+        },
+      )
+      .then(() =>
+        this.logger.success(
+          'Successfully registered all application commands!',
+        ),
+      )
       .catch((e: unknown) => this.logger.error(e));
   }
 }

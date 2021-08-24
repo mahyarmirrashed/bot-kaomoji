@@ -9,7 +9,7 @@ config();
 
 new Bot(
   // create collection from list of kaomojis
-  new Collection(
+  new Collection<string, string>(
     ((file.kaomojis as ReadonlyArray<Kaomoji>) || []).map(
       (kaomoji: Kaomoji) => [kaomoji.name, kaomoji.data],
     ),
