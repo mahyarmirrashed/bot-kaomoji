@@ -1,15 +1,11 @@
 import Bot from '../client/Client';
 import Runner from '../interfaces/RunnerStorage';
 
-type WarnEventArgs = {
-  warning: string;
-};
-
-export const run: Runner<WarnEventArgs> = async (
+export const run: Runner<string> = async (
   client: Bot,
-  args: WarnEventArgs,
+  warning: string,
 ): Promise<void> => {
-  client.logger.info(args.warning);
+  client.logger.info(warning);
 };
 
 export const name = 'warn';
