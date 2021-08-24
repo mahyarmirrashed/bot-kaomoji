@@ -1,4 +1,3 @@
 - Create event for interaction creation
 - Send out poll for emojis using Google Forms
 - Award poll winner through random draw
-- Create `.json` file to load kaomojis into hash map
