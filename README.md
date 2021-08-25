@@ -4,4 +4,4 @@ This is a bot created using TypeScript and Discord.js for the University of Mani
 
 #### Credits
 
-I would like to thank SmileX from [kaomoji.ru](https://kaomoji.ru) who provided most of the Kaomojis available with this bot.
+We would like to thank SmileX from [kaomoji.ru](https://kaomoji.ru) who provided most of the Kaomojis available with this bot.
