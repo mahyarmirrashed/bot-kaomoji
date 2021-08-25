@@ -1,2 +1,1 @@
-- Create event for interaction creation
 - Award poll winner through random draw
