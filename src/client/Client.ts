@@ -16,7 +16,6 @@ import {
 import glob from 'glob';
 import { promisify } from 'util';
 import Event from '../interfaces/EventStorage';
-import Kaomoji from '../types/Kaomoji';
 
 const globPromise = promisify(glob);
 
