@@ -10,7 +10,7 @@ export const run: Runner = async (client: Bot): Promise<void> => {
     client.user.setPresence({
       status: PresenceUpdateStatus.Online,
       afk: false,
-      activities: [{ name: '/joy', type: ActivityType.Listening }],
+      activities: [{ name: '/joy', type: ActivityType.Game }],
     });
   } else {
     client.logger.error('`user` property on `client` was `null`...');
