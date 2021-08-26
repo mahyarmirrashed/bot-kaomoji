@@ -72,26 +72,20 @@ export default class Bot extends Client {
     // register kaomoji slash commands
     new REST({ version: '9' })
       .setToken(process.env.DISCORD_TOKEN as string)
-      .put(
-        Routes.applicationGuildCommands(
-          process.env.CLIENT_ID as string,
-          process.env.GUILD_ID as string,
+      .put(Routes.applicationCommands(process.env.CLIENT_ID as string), {
+        body: Array.from(
+          this.kaomojis.entries(),
+          ([name, data]: [string, string]) =>
+            new SlashCommandBuilder()
+              .setName(name)
+              .setDescription(`Appends ${data} to your message.`)
+              .setDefaultPermission(true)
+              .addStringOption((option: SlashCommandStringOption) =>
+                option.setName('message').setDescription('Your message'),
+              )
+              .toJSON(),
         ),
-        {
-          body: Array.from(
-            this.kaomojis.entries(),
-            ([name, data]: [string, string]) =>
-              new SlashCommandBuilder()
-                .setName(name)
-                .setDescription(`Appends ${data} to your message.`)
-                .setDefaultPermission(true)
-                .addStringOption((option: SlashCommandStringOption) =>
-                  option.setName('message').setDescription('Your message'),
-                )
-                .toJSON(),
-          ),
-        },
-      )
+      })
       .then(() =>
         this.logger.success(
           'Successfully registered all application commands!',
