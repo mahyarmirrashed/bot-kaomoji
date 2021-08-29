@@ -1,0 +1,66 @@
+{
+  "kaomojis": [
+    { "name": "joy", "data": "\u0669(\u25d5\u203f\u25d5)\u06f6" },
+    { "name": "love", "data": "(\u2764\u03c9\u2764)" },
+    { "name": "embarrassment", "data": "( \u25e1\u203f\u25e1 *)" },
+    {
+      "name": "sympathy",
+      "data": "(\u3063\u00b4\u03c9`)\uff89(\u2565\u03c9\u2565)"
+    },
+    { "name": "dissatisfaction", "data": "(\u15d2\u15e3\u15d5)\u055e" },
+    { "name": "anger", "data": "\u0669(\u0c20\u76ca\u0c20)\u06f6" },
+    { "name": "sadness", "data": "(\u2565_\u2565)" },
+    { "name": "pain", "data": "(\u00d7\ufe4f\u00d7)" },
+    { "name": "fear", "data": "\uff3c(\u3007_\uff4f)\uff0f" },
+    { "name": "indifference", "data": "\u00af\\_(\u30c4)_/\u00af" },
+    { "name": "confusion", "data": "\u10da(\u0ca0_\u0ca0 \u10da)" },
+    { "name": "doubt", "data": "(\u14c0 \u14c0)" },
+    { "name": "surprise", "data": "(\u2299_\u2299)" },
+    { "name": "greeting", "data": "(\u00b0\u25bd\u00b0)/" },
+    { "name": "hugging", "data": "(\u3065 \u25d5\u203f\u25d5 )\u3065" },
+    { "name": "winking", "data": "( -_\u30fb)" },
+    { "name": "apologizing", "data": "(*_ _)\u4eba" },
+    { "name": "nosebleeding", "data": "(\uff3e\u0f0b\u0f0d\uff3e)" },
+    {
+      "name": "hiding",
+      "data": "\u252c\u2534\u252c\u2534\u2524( \u0361\u00b0 \u035c\u0296\u251c\u252c\u2534\u252c\u2534"
+    },
+    { "name": "writing", "data": "___\u3006(\u30fb\u2200\u30fb)" },
+    { "name": "running", "data": "\u03b5=\u03b5=\u250c( >_<)\u2518" },
+    { "name": "sleeping", "data": "(\u222a\uff61\u222a)\uff61\uff61\uff61zzZ" },
+    { "name": "cat", "data": "(^=\u25d5\u1d25\u25d5=^)].1" },
+    { "name": "bear", "data": "\u0295 \u1d54\u1d25\u1d54 \u0294" },
+    { "name": "dog", "data": "V\u25cf\u1d25\u25cfV" },
+    { "name": "rabbit", "data": "\uff0f(=\uff65 x \uff65=)\uff3c" },
+    { "name": "pig", "data": "( \u00b4(oo)\u02cb )" },
+    { "name": "bird", "data": "(\u25c9\u0398\u25c9)" },
+    { "name": "fish", "data": ">\u00b0))))\u5f61" },
+    {
+      "name": "spider",
+      "data": "/\u2572/\\\\\u256d(\u0cb0\u0cb0\u2313\u0cb0\u0cb0)\u256e/\\\\\u2571\\\\"
+    },
+    {
+      "name": "friends",
+      "data": "\uff3c(\uff3e\u2200\uff3e)\u30e1(\uff3e\u2200\uff3e)\u30ce"
+    },
+    {
+      "name": "enemies",
+      "data": "(\u0e07\u0ca0_\u0ca0)\u0e07\u3000\u03c3( \u2022\u0300 \u03c9 \u2022\u0301 \u03c3)"
+    },
+    {
+      "name": "weapons",
+      "data": "( \u00b4-\u03c9\uff65)\ufe3b\u253b\u2533\u2550\u2550\u2501\u4e00"
+    },
+    {
+      "name": "magic",
+      "data": "(\uff89\u2267\u2200\u2266)\uff89 \u2025\u2026\u2501\u2501\u2501\u2605"
+    },
+    { "name": "food", "data": "( \u02d8\u25bd\u02d8)\u3063\u2668" },
+    { "name": "music", "data": "( \u02d8 \u025c\u02d8) \u266c\u266a\u266b" },
+    {
+      "name": "games",
+      "data": "\u30fd(^o^)\u03c1\u2533\u253b\u2533\u00b0\u03c3(^o^)\u30ce"
+    },
+    { "name": "faces", "data": "( \u0360\u00b0 \u035f\u0296 \u0361\u00b0)" }
+  ]
+}

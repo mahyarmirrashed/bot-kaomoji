@@ -1,6 +1,6 @@
 import { Collection } from 'discord.js';
 import { config } from 'dotenv';
-import * as file from '../data/kaomoji.json';
+import * as file from '../data/kaomojis.json';
 import Bot from './client/Client';
 import Kaomoji from './types/Kaomoji';
 
