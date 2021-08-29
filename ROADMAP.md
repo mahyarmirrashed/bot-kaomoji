@@ -1,1 +1,0 @@
-- Award poll winner through random draw
