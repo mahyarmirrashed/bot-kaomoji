@@ -44,11 +44,11 @@
       "data": "\uff3c(\uff3e\u2200\uff3e)\u30e1(\uff3e\u2200\uff3e)\u30ce"
     },
     {
-      "name": "enemies",
+      "name": "enemy",
       "data": "(\u0e07\u0ca0_\u0ca0)\u0e07\u3000\u03c3( \u2022\u0300 \u03c9 \u2022\u0301 \u03c3)"
     },
     {
-      "name": "weapons",
+      "name": "weapon",
       "data": "( \u00b4-\u03c9\uff65)\ufe3b\u253b\u2533\u2550\u2550\u2501\u4e00"
     },
     {
@@ -58,9 +58,62 @@
     { "name": "food", "data": "( \u02d8\u25bd\u02d8)\u3063\u2668" },
     { "name": "music", "data": "( \u02d8 \u025c\u02d8) \u266c\u266a\u266b" },
     {
-      "name": "games",
+      "name": "game",
       "data": "\u30fd(^o^)\u03c1\u2533\u253b\u2533\u00b0\u03c3(^o^)\u30ce"
     },
-    { "name": "faces", "data": "( \u0360\u00b0 \u035f\u0296 \u0361\u00b0)" }
+    { "name": "faces", "data": "( \u0360\u00b0 \u035f\u0296 \u0361\u00b0)" },
+    { "name": "tired", "data": "\u0669(\u02ca\u3007\u02cb*)\u0648" },
+    { "name": "salute", "data": "(\uffe3^\uffe3)\u309e" },
+    { "name": "facepalm", "data": "(\uff0d\u2038\u10da)" },
+    {
+      "name": "rage",
+      "data": "(\u256f\u00b0\u76ca\u00b0)\u256f\u5f61\u253b\u2501\u253b"
+    },
+    {
+      "name": "giveup",
+      "data": "(\u256e\u00b0-\u00b0)\u256e\u2533\u2501\u2501\u2533 ( \u256f\u00b0\u25a1\u00b0)\u256f \u253b\u2501\u2501\u253b"
+    },
+    { "name": "surrender", "data": "(oT-T)\u5c38" },
+    { "name": "lenny", "data": "( \u0361\u00b0 \u035c\u0296 \u0361\u00b0)" },
+    {
+      "name": "money",
+      "data": "[\u0332\u0305$\u0332\u0305(\u0332\u0305 \u0361\u00b0 \u035c\u0296 \u0361\u00b0\u0332\u0305)\u0332\u0305$\u0332\u0305]"
+    },
+    {
+      "name": "smoke",
+      "data": "\u0c66\uff10o \uff61 (\u203e\u0301\u3002\u203e\u0301 )y~~"
+    },
+    { "name": "hungry", "data": "(\uffe3\ufe43\uffe3)" },
+    { "name": "point", "data": "(\u3000\uff65\u03c9\uff65)\u261e" },
+    { "name": "nerd", "data": "(\u2310\u25a0_\u25a0)" },
+    { "name": "cutie", "data": "(\u25d5\u203f\u25d5\u273f)" },
+    {
+      "name": "television",
+      "data": "(\u3000\uffe3.)o-\u3000\u3000\u3010\u3000TV\u3000\u3011"
+    },
+    {
+      "name": "despair",
+      "data": "\uff40\u3001\u30fd\uff40\u30fd\uff40\u3001\u30fd(\u30ce\uff1e\uff1c)\u30ce \uff40\u3001\u30fd\uff40\u2602\u30fd\uff40\u3001\u30fd"
+    },
+    {
+      "name": "drowning",
+      "data": "\u203f\ufe35\u203f\ufe35\u203f\ufe35\u203f\u30fd(\u00b0\u25a1\u00b0 )\u30ce\ufe35\u203f\ufe35\u203f\ufe35\u203f\ufe35"
+    },
+    {
+      "name": "hentai",
+      "data": "( \u2022 )( \u2022 )\u0505(\u2256\u203f\u2256\u0505)"
+    },
+    {
+      "name": "punish",
+      "data": "( \uff3e\u25bd\uff3e)\u3063\u2702\u2570\u22c3\u256f"
+    },
+    {
+      "name": "frolick",
+      "data": "\u301c\u301c(\uff0f\uffe3\u25bd)\uff0f\u3000\u301c\u0444"
+    },
+    {
+      "name": "angel",
+      "data": "\u0b18(\u0a6d\u02ca\ua4b3\u200b\u02cb)\u0a6d\u2727"
+    }
   ]
 }
