@@ -1,6 +1,6 @@
-import Runner from './RunnerStorage';
+import Handler from './HandlerStorage';
 
 export default interface Event {
   name: string;
-  run: Runner;
+  run: Handler;
 }

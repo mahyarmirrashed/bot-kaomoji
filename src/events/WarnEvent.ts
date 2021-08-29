@@ -1,7 +1,7 @@
 import Bot from '../client/Client';
-import Runner from '../interfaces/RunnerStorage';
+import Handler from '../interfaces/HandlerStorage';
 
-export const run: Runner<string> = async (
+export const run: Handler<string> = async (
   client: Bot,
   warning: string,
 ): Promise<void> => {

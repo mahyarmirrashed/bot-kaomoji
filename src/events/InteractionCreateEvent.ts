@@ -1,9 +1,9 @@
 import { hyperlink } from '@discordjs/builders';
 import { Interaction } from 'discord.js';
 import Bot from '../client/Client';
-import Runner from '../interfaces/RunnerStorage';
+import Handler from '../interfaces/HandlerStorage';
 
-export const run: Runner<Interaction> = async (
+export const run: Handler<Interaction> = async (
   client: Bot,
   interaction: Interaction,
 ): Promise<void> => {

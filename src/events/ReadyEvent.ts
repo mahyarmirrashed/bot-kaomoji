@@ -1,8 +1,8 @@
 import { ActivityType, PresenceUpdateStatus } from 'discord-api-types/v9';
 import Bot from '../client/Client';
-import Runner from '../interfaces/RunnerStorage';
+import Handler from '../interfaces/HandlerStorage';
 
-export const run: Runner = async (client: Bot): Promise<void> => {
+export const run: Handler = async (client: Bot): Promise<void> => {
   if (client.user) {
     // report sucessful login
     client.logger.success(`${client.user.username} successfully logged in!`);
