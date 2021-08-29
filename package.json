@@ -52,5 +52,9 @@
       "yarn lint",
       "yarn format"
     ]
+  },
+  "engines": {
+    "npm": "",
+    "yarn": ">=1.22"
   }
 }
