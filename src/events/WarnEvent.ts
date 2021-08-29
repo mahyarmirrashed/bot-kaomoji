@@ -1,3 +1,4 @@
+import { Constants } from 'discord.js';
 import Bot from '../client/Client';
 import Handler from '../interfaces/HandlerStorage';
 
@@ -8,4 +9,4 @@ export const run: Handler<string> = async (
   client.logger.info(warning);
 };
 
-export const name = 'warn';
+export const name = Constants.Events.WARN;

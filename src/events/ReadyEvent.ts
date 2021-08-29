@@ -1,3 +1,4 @@
+import { Constants } from 'discord.js';
 import { ActivityType, PresenceUpdateStatus } from 'discord-api-types/v9';
 import Bot from '../client/Client';
 import Handler from '../interfaces/HandlerStorage';
@@ -17,4 +18,4 @@ export const run: Handler = async (client: Bot): Promise<void> => {
   }
 };
 
-export const name = 'ready';
+export const name = Constants.Events.CLIENT_READY;

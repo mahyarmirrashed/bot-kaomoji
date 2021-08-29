@@ -1,5 +1,5 @@
 import { hyperlink } from '@discordjs/builders';
-import { Interaction } from 'discord.js';
+import { Constants, Interaction } from 'discord.js';
 import Bot from '../client/Client';
 import Handler from '../interfaces/HandlerStorage';
 
@@ -25,4 +25,4 @@ export const run: Handler<Interaction> = async (
   }
 };
 
-export const name = 'interactionCreate';
+export const name = Constants.Events.INTERACTION_CREATE;
