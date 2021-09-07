@@ -14,7 +14,9 @@ export const run: Handler<Interaction> = async (
         interaction.reply(
           `${
             interaction.options.getString('message') ?? ''
-          } ${Util.escapeMarkdown(kaomoji as string)}`,
+          } ${Util.escapeMarkdown(
+            Array.isArray(kaomoji) ? kaomoji[0] : kaomoji,
+          )}`,
         );
       } else {
         // print with variant
