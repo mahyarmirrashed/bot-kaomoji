@@ -1,6 +1,6 @@
 {
   "name": "bot-kaomoji",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Bot for slash command Kaomojis.",
   "main": "index.js",
   "repository": "https://github.com/mahyarmirrashed/bot-kaomoji.git",
