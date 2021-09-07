@@ -1,5 +1,5 @@
 import { hyperlink } from '@discordjs/builders';
-import { Constants, Interaction } from 'discord.js';
+import { Constants, Interaction, Util } from 'discord.js';
 import Bot from '../client/Client';
 import Handler from '../interfaces/HandlerStorage';
 
@@ -9,11 +9,26 @@ export const run: Handler<Interaction> = async (
 ): Promise<void> => {
   if (interaction.isCommand()) {
     if (client.kaomojis.has(interaction.commandName)) {
-      interaction.reply(
-        `${
-          interaction.options.getString('message') || ''
-        } ${client.kaomojis.get(interaction.commandName)}`,
-      );
+      const kaomoji = client.kaomojis.get(interaction.commandName);
+      if (interaction.options.getInteger('variant') == null) {
+        client.logger.info('here');
+        interaction.reply(
+          `${
+            interaction.options.getString('message') ?? ''
+          } ${Util.escapeMarkdown(kaomoji as string)}`,
+        );
+      } else {
+        // print with variant
+        interaction.reply(
+          `${
+            interaction.options.getString('message') ?? ''
+          } ${Util.escapeMarkdown(
+            (kaomoji as readonly string[])[
+              interaction.options.getInteger('variant', true)
+            ],
+          )}`,
+        );
+      }
     } else {
       interaction.reply({
         content: `Houston, we found a bug! Please report it ${hyperlink(
