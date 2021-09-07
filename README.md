@@ -1,6 +1,6 @@
 # Kaomoji Discord Bot `\(^ヮ^)/`
 
-This is a bot created using TypeScript and Discord.js for the University of Manitoba chapter of IEEE Discord Server. This bot was developed by Mahyar Mirrashed (Chair 2021-2022) as part of his incoming role during the summer.
+This bot is created using TypeScript and Discord.js. It was originally meant for the University of Manitoba chapter of IEEE Discord Serverand was developed by Mahyar Mirrashed (Chair 2021-2022) as part of his incoming role during the summer.
 
 #### Credits
 
