@@ -11,7 +11,6 @@ export const run: Handler<Interaction> = async (
     if (client.kaomojis.has(interaction.commandName)) {
       const kaomoji = client.kaomojis.get(interaction.commandName);
       if (interaction.options.getInteger('variant') == null) {
-        client.logger.info('here');
         interaction.reply(
           `${
             interaction.options.getString('message') ?? ''
