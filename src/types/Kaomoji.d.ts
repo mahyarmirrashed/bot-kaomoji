@@ -1,6 +1,6 @@
 type Kaomoji = {
-  name: readonly string;
-  data: readonly string;
+  name: string;
+  data: string | readonly string[];
 };
 
 export default Kaomoji;
