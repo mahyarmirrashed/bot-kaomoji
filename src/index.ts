@@ -1,17 +1,7 @@
-import { Collection } from 'discord.js';
 import { config } from 'dotenv';
-import * as file from '../data/kaomojis.json';
 import Bot from './client/Client';
-import Kaomoji from './types/Kaomoji';
 
 // set up environment variables from .env file
 config();
 
-new Bot(
-  // create collection from list of kaomojis
-  new Collection<string, string>(
-    ((file.kaomojis as ReadonlyArray<Kaomoji>) || []).map(
-      (kaomoji: Kaomoji) => [kaomoji.name, kaomoji.data],
-    ),
-  ),
-).start();
+new Bot().start();
