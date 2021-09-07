@@ -109,7 +109,7 @@ export default class Bot extends Client {
                           // slash commands can only have 25 options
                           .slice(0, MAXIMUM_OPTIONS)
                           .map((datum: string, index: number) => [
-                            datum,
+                            `${index} → ${datum}`,
                             index,
                           ]),
                       ),
