@@ -7,6 +7,9 @@ This bot is created using TypeScript and Discord.js. It was originally meant for
 To generate new data to enter as a Kaomoji, please use the following Python script:
 
 ```py
+emojis = '''
+'''.split('\n')
+
 from json import dump
 with open('out.txt', mode='w') as f:
   dump(emojis, f)
