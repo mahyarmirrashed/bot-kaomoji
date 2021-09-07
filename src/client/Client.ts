@@ -81,55 +81,49 @@ export default class Bot extends Client {
     // register kaomoji slash commands
     new REST({ version: '9' })
       .setToken(process.env.DISCORD_TOKEN as string)
-      .put(
-        Routes.applicationGuildCommands(
-          process.env.CLIENT_ID as string,
-          process.env.GUILD_ID as string,
+      .put(Routes.applicationCommands(process.env.CLIENT_ID as string), {
+        body: [...this.kaomojis.entries()].flatMap<
+          ReturnType<SlashCommandBuilder['toJSON']>
+        >(([name, data]: [string, string | readonly string[]]) =>
+          Array.isArray(data) && data.length > 1
+            ? // variant case
+              new SlashCommandBuilder()
+                .setName(name)
+                .setDescription(
+                  `Appends ${data[0]} or a variant to your message.`,
+                )
+                .setDefaultPermission(true)
+                .addIntegerOption((option: SlashCommandIntegerOption) =>
+                  option
+                    .setName('variant')
+                    .setDescription(
+                      `Desired variant of ${inlineCode(name)} kaomoji`,
+                    )
+                    .addChoices(
+                      data
+                        // slash commands can only have 25 options
+                        .slice(0, MAXIMUM_OPTIONS)
+                        .map((datum: string, index: number) => [
+                          `${index} → ${datum}`,
+                          index,
+                        ]),
+                    ),
+                )
+                .addStringOption((option: SlashCommandStringOption) =>
+                  option.setName('message').setDescription('Your message'),
+                )
+                .toJSON()
+            : // no variant case
+              new SlashCommandBuilder()
+                .setName(name)
+                .setDescription(`Appends ${data} to your message.`)
+                .setDefaultPermission(true)
+                .addStringOption((option: SlashCommandStringOption) =>
+                  option.setName('message').setDescription('Your message'),
+                )
+                .toJSON(),
         ),
-        {
-          body: [...this.kaomojis.entries()].flatMap<
-            ReturnType<SlashCommandBuilder['toJSON']>
-          >(([name, data]: [string, string | readonly string[]]) =>
-            Array.isArray(data) && data.length > 1
-              ? // variant case
-                new SlashCommandBuilder()
-                  .setName(name)
-                  .setDescription(
-                    `Appends ${data[0]} or a variant to your message.`,
-                  )
-                  .setDefaultPermission(true)
-                  .addIntegerOption((option: SlashCommandIntegerOption) =>
-                    option
-                      .setName('variant')
-                      .setDescription(
-                        `Desired variant of ${inlineCode(name)} kaomoji`,
-                      )
-                      .addChoices(
-                        data
-                          // slash commands can only have 25 options
-                          .slice(0, MAXIMUM_OPTIONS)
-                          .map((datum: string, index: number) => [
-                            `${index} → ${datum}`,
-                            index,
-                          ]),
-                      ),
-                  )
-                  .addStringOption((option: SlashCommandStringOption) =>
-                    option.setName('message').setDescription('Your message'),
-                  )
-                  .toJSON()
-              : // no variant case
-                new SlashCommandBuilder()
-                  .setName(name)
-                  .setDescription(`Appends ${data} to your message.`)
-                  .setDefaultPermission(true)
-                  .addStringOption((option: SlashCommandStringOption) =>
-                    option.setName('message').setDescription('Your message'),
-                  )
-                  .toJSON(),
-          ),
-        },
-      )
+      })
       .then(() =>
         this.logger.success(
           'Successfully registered all application commands!',
