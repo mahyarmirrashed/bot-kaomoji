@@ -20,3 +20,5 @@ jobs:
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag mahyarmirrashed/bot-umieee:$(grep '"version":' package.json | cut -d\" -f4)
+      - name: Push the Docker image
+        run: docker push mahyarmirrashed/bot-umieee:$(grep '"version":' package.json | cut -d\" -f4)
