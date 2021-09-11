@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-standard-version
+[[ $(git rev-parse --abbrev-ref HEAD) == "main" ]] && standard-version
