@@ -13,7 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Extract package version
-        run: export VERSION=$(grep '"version":' package.json | cut -d\" -f4)
+        run: |
+          export VERSION=$(grep '"version":' package.json | cut -d\" -f4)
+          echo $VERSION
       - name: Log into Docker
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
