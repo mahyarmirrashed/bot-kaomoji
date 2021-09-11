@@ -23,10 +23,15 @@ jobs:
         run: docker push mahyarmirrashed/bot-kaomoji:$(grep '"version":' package.json | cut -d\" -f4)
       - name: Deploy Docker image on remote server
         uses: appleboy/ssh-action@master
+        env:
+          VERSION: grep '"version":' package.json | cut -d\" -f4
+          TEST: 'testing'
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
+          envs: VERSION,TEST
           script: |
             whoami
-            grep '"version":' package.json | cut -d\" -f4
+            echo $VERSION
+            echo $TEST
