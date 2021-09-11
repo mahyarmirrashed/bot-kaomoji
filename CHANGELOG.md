@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/mahyarmirrashed/bot-kaomoji/compare/v1.3.5...v1.4.0) (2021-09-11)
+
+
+### Features
+
+* ensure needed environment variables are set ([3891d7b](https://github.com/mahyarmirrashed/bot-kaomoji/commit/3891d7b9ff0d97b23d61e019f1a79b173cf925c5))
+
 ### [1.3.5](https://github.com/mahyarmirrashed/bot-kaomoji/compare/v1.3.4...v1.3.5) (2021-09-11)
 
 ### [1.3.4](https://github.com/mahyarmirrashed/bot-kaomoji/compare/v1.3.3...v1.3.4) (2021-09-11)
