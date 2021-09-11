@@ -7,17 +7,19 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
+      - name: Extract package version
+        run: export VERSION=$(grep '"version":' package.json | cut -d\" -f4)
       - name: Log into Docker
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag mahyarmirrashed/bot-kaomoji:$(grep '"version":' package.json | cut -d\" -f4)
+        run: docker build . --file Dockerfile --tag mahyarmirrashed/bot-kaomoji:$VERSION
       - name: Push the Docker image
-        run: docker push mahyarmirrashed/bot-kaomoji:$(grep '"version":' package.json | cut -d\" -f4)
+        run: docker push mahyarmirrashed/bot-kaomoji:$VERSION
