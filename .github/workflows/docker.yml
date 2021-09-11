@@ -9,8 +9,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      VERSION: $(grep '"version":' package.json | cut -d\" -f4)
 
     steps:
       - uses: actions/checkout@v2
@@ -22,6 +20,15 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag mahyarmirrashed/bot-kaomoji:${VERSION}
+        run: docker build . --file Dockerfile --tag mahyarmirrashed/bot-kaomoji:$(grep '"version":' package.json | cut -d\" -f4)
       - name: Push the Docker image
-        run: docker push mahyarmirrashed/bot-kaomoji:${VERSION}
+        run: docker push mahyarmirrashed/bot-kaomoji:$(grep '"version":' package.json | cut -d\" -f4)
+      - name: Deploy Docker image on remote server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            whoami
+            grep '"version":' package.json | cut -d\" -f4
