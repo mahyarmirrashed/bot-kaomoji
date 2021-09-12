@@ -47,3 +47,4 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
             docker-compose down
+            docker-compose up -d
