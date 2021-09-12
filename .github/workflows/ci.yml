@@ -19,8 +19,6 @@ jobs:
         with:
           images: mahyarmirrashed/bot-kaomoji
           tags: |
-            type=ref,event=branch
-            type=ref,event=pr
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
             type=semver,pattern={{major}}
@@ -37,7 +35,9 @@ jobs:
         with:
           push: ${{ github.event_name != 'pull_request' }}
           context: .
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: |
+            mahyarmirrashed/bot-kaomoji:latest
+            ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
       - name: Deploy Docker image on remote server
         uses: appleboy/ssh-action@master
