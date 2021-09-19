@@ -1,6 +1,6 @@
 # Kaomoji Discord Bot `\(^ヮ^)/`
 
-This bot is created using TypeScript and Discord.js. It was originally meant for the University of Manitoba chapter of IEEE Discord Server as a test project for the new slash commands feature. It was developed by Mahyar Mirrashed (Chair 2021-2022) as part of his incoming role during the summer.
+This bot is created using TypeScript and Discord.js. It was originally meant for the University of Manitoba chapter of IEEE Discord server as a test project for the new slash commands feature. It was developed by Mahyar Mirrashed (Chair 2021-2022) as part of his incoming role during the summer.
 
 ## Generating new Kaomoji Data
 
