@@ -1,0 +1,10 @@
+---
+version: '2.1'
+services:
+  kaomoji:
+    image: mahyarmirrashed/bot-kaomoji
+    container_name: kaomoji
+    environment:
+      - CLIENT_ID=INSERT_CLIENT_ID_HERE
+      - DISCORD_TOKEN=INSERT_DISCORD_TOKEN_HERE
+    restart: unless-stopped
