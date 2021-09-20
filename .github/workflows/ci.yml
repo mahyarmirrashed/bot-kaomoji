@@ -44,5 +44,5 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
-            docker-compose down
-            docker-compose up -d
+            docker-compose -f kaomoji.yml down
+            docker-compose -f kaomoji.yml up -d
