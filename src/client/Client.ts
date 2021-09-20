@@ -21,7 +21,7 @@ import {
 import glob from 'glob';
 import { promisify } from 'util';
 import Event from '../interfaces/EventStorage';
-import * as file from '../../data/kaomojis.json';
+import * as kaomojisFile from '../../data/kaomojis.json';
 import Kaomoji from '../types/Kaomoji';
 
 const globPromise = promisify(glob);
@@ -62,7 +62,7 @@ export default class Bot extends Client {
 
     // load Kaomojis
     this.kaomojis = new Collection<string, string | readonly string[]>();
-    (file.kaomojis as Kaomoji[]).forEach((kaomoji: Kaomoji) =>
+    (kaomojisFile.kaomojis as Kaomoji[]).forEach((kaomoji: Kaomoji) =>
       this.kaomojis.set(kaomoji.name, kaomoji.data),
     );
   }
